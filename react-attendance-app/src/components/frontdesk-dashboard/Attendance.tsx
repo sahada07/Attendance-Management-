@@ -1,10 +1,15 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Attendance.css';
 
 const Attendance = () => {
+  const navigate = useNavigate();
+
   const handleStartAttendance = () => {
-    // Handle starting attendance
-    console.log('Starting attendance...');
+    // Get the current origin (protocol + hostname + port)
+    const origin = window.location.origin;
+    // Navigate to the standalone take attendance page
+    window.open(`${origin}/take-attendance`, '_blank');
   };
 
   return (

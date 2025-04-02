@@ -3,7 +3,7 @@ import './ParcelForm.css';
 
 interface Parcel {
   id: number;
-  type: 'Official' | 'Personal' | 'Confidential';
+  type: 'gift' | 'package' | 'machinery' | 'food';
   sendersName: string;
   receiversName: string;
   department: string;
@@ -23,7 +23,7 @@ interface ParcelFormProps {
 
 const ParcelForm: React.FC<ParcelFormProps> = ({ isOpen, onClose, onSubmit, initialData }) => {
   const [formData, setFormData] = useState<Omit<Parcel, 'id' | 'timestamp'>>({
-    type: 'Official',
+    type: 'gift',
     sendersName: '',
     receiversName: '',
     department: '',
@@ -74,9 +74,11 @@ const ParcelForm: React.FC<ParcelFormProps> = ({ isOpen, onClose, onSubmit, init
               onChange={(e) => setFormData({ ...formData, type: e.target.value as Parcel['type'] })}
               required
             >
-              <option value="Official">Official</option>
-              <option value="Personal">Personal</option>
-              <option value="Confidential">Confidential</option>
+              <option value="">Select Type of Parcel</option>
+              <option value="gift">Gift</option>
+              <option value="package">Package</option>
+              <option value="machinery">Machinery</option>
+              <option value="food">Food</option>
             </select>
           </div>
 

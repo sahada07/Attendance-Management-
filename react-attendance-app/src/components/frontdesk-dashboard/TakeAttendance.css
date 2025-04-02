@@ -1,0 +1,144 @@
+.attendance-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('/assets/wallpaper-attendance.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 1rem;
+  position: relative;
+}
+
+.attendance-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.attendance-box {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  padding: 3rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  backdrop-filter: blur(10px);
+}
+
+.attendance-box h1 {
+  color: #333;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.attendance-box h2 {
+  color: #666;
+  font-size: 1.2rem;
+  font-weight: normal;
+  margin-bottom: 2rem;
+}
+
+.time-display {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-radius: 8px;
+  color: #555;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.attendance-buttons {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.clock-button {
+  width: 120px;
+  height: 120px;
+  border: none;
+  border-radius: 50%;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0;
+}
+
+.clock-button i {
+  font-size: 2rem;
+  margin-bottom: 0.25rem;
+}
+
+.clock-in {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.clock-in:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+.clock-out {
+  background-color: #f44336;
+  color: white;
+}
+
+.clock-out:hover {
+  background-color: #da190b;
+  transform: scale(1.05);
+}
+
+.clock-button.active {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .attendance-box {
+    padding: 2rem;
+  }
+
+  .attendance-buttons {
+    flex-direction: row;
+    gap: 1.5rem;
+  }
+
+  .clock-button {
+    width: 100px;
+    height: 100px;
+    font-size: 0.9rem;
+  }
+
+  .clock-button i {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .clock-button {
+    width: 90px;
+    height: 90px;
+    font-size: 0.85rem;
+  }
+
+  .clock-button i {
+    font-size: 1.6rem;
+  }
+} 

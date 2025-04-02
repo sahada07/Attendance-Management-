@@ -8,6 +8,7 @@ import Letters from './components/frontdesk-dashboard/Letters';
 import Parcels from './components/frontdesk-dashboard/Parcels'; 
 import VisitorsLog from './components/frontdesk-dashboard/VisitorsLog';
 import Attendance from './components/frontdesk-dashboard/Attendance';
+import TakeAttendance from './components/frontdesk-dashboard/TakeAttendance';
 import './App.css';
 
 const App = () => {
@@ -20,6 +21,10 @@ const App = () => {
         <Route 
           path="/login" 
           element={isAuthenticated ? <Navigate to="/dashboard" /> : <Login />} 
+        />
+        <Route 
+          path="/take-attendance" 
+          element={isAuthenticated ? <TakeAttendance /> : <Navigate to="/login" />} 
         />
         <Route 
           path="/dashboard" 
