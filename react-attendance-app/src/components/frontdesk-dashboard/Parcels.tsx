@@ -4,7 +4,7 @@ import ParcelForm from './ParcelForm';
 
 interface Parcel {
   id: number;
-  type: 'Official' | 'Personal' | 'Confidential';
+  type: 'gift' | 'package' | 'machinery' | 'food';
   sendersName: string;
   receiversName: string;
   department: string;
@@ -28,7 +28,7 @@ const Parcels: React.FC = () => {
   const [parcels] = useState<Parcel[]>([
     {
       id: 1,
-      type: 'Official',
+      type: 'package',
       sendersName: 'John Doe',
       receiversName: 'Jane Smith',
       department: 'Administration',
@@ -40,7 +40,7 @@ const Parcels: React.FC = () => {
     },
     {
       id: 2,
-      type: 'Personal',
+      type: 'gift',
       sendersName: 'Alice Johnson',
       receiversName: 'Bob Wilson',
       department: 'Human Resources',
@@ -119,9 +119,10 @@ const Parcels: React.FC = () => {
           />
           <select value={typeFilter} onChange={(e) => setTypeFilter(e.target.value)}>
             <option value="">All Types</option>
-            <option value="Official">Official</option>
-            <option value="Personal">Personal</option>
-            <option value="Confidential">Confidential</option>
+            <option value="gift">Gift</option>
+              <option value="package">Package</option>
+              <option value="machinery">Machinery</option>
+              <option value="food">Food</option>
           </select>
           <select value={statusFilter} onChange={(e) => setStatusFilter(e.target.value)}>
             <option value="">All Status</option>
