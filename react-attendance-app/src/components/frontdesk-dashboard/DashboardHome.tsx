@@ -6,24 +6,24 @@ const DashboardHome = () => {
     <div className="dashboard-home">
       <div className="stats-grid">
         <div className="stat-card">
-          <div className="stat-value">1,504</div>
-          <div className="stat-label">Daily Views</div>
-          <i className="bi bi-eye stat-icon"></i>
+          <div className="stat-value">259</div>
+          <div className="stat-label">Recent Visitors</div>
+          <i className="bi bi-people stat-icon"></i>
         </div>
         <div className="stat-card">
-          <div className="stat-value">80</div>
-          <div className="stat-label">Sales</div>
-          <i className="bi bi-cart stat-icon"></i>
+          <div className="stat-value">10</div>
+          <div className="stat-label">New Parcels</div>
+          <i className="bi bi-gift stat-icon"></i>
         </div>
         <div className="stat-card">
-          <div className="stat-value">284</div>
-          <div className="stat-label">Comments</div>
-          <i className="bi bi-chat stat-icon"></i>
+          <div className="stat-value">30</div>
+          <div className="stat-label">New Letters</div>
+          <i className="bi bi-envelope stat-icon"></i>
         </div>
         <div className="stat-card">
-          <div className="stat-value">$7,842</div>
-          <div className="stat-label">Earning</div>
-          <i className="bi bi-currency-dollar stat-icon"></i>
+          <div className="stat-value">945</div>
+          <div className="stat-label">Total Attendance for today</div>
+          <i className="bi bi-clipboard-check stat-icon"></i>
         </div>
       </div>
 
