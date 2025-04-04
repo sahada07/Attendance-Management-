@@ -32,8 +32,53 @@ class Letter(models.Model):
     ('Memos Letters','Memos Letters'),
     ('Recommendation Letters','Recommendation Letters'),
   ]
+    department_choices =[
+  ('Administration','Administration'),
+  ('Human Resources','Human Resources'),
+  ('Finance','Finance'),
+  ('Research and Innovation','Research and Innovation'),
+  ('Corporate','Corporate'),
+  ('IT','IT'),
+   ('Consultancy','Consultancy'),
+ ('Faculty','Faculty'),
+
+  ]
     purpose = models.CharField(max_length=225, choices=purpose_choices)
     def __str__(self):
         return f" ({self.purpose})"
     
+class Parcel(models.Model):
+    sender_name=models.CharField(max_length=225)
+    receiver_name=models.CharField(max_length=225)
+    purpose_choices =[
+        ('Package','Package'),
+        ('gift','gift'),
+        ('Order Letters','Order Letters'),
+        ('Confirmation Letters','Confirmation Letters'),
+        ('Invitation Letters','Invitation Letters'),
+    ('Memos Letters','Memos Letters'),
+    ('Recommendation Letters','Recommendation Letters'),
+  ]
+    department_choices =[
+  ('Administration','Administration'),
+  ('Human Resources','Human Resources'),
+  ('Finance','Finance'),
+  ('Research and Innovation','Research and Innovation'),
+  ('Corporate','Corporate'),
+  ('IT','IT'),
+   ('Consultancy','Consultancy'),
+ ('Faculty','Faculty'),
+
+  ]
+    purpose = models.CharField(max_length=225, choices=purpose_choices)
+    tracking_number=models.IntegerField
+    status_choices= [
+      ('received'), ('Received'),
+    ('dispatch')      , ('dispatch')
+                     
+      ]
+    time=models.TimeField
+    def __str__(self):
+        return f" ({self.purpose})"
     
+     

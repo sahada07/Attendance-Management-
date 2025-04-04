@@ -70,7 +70,7 @@ class LetterDetailView(APIView):
     def delete(self, request, pk):
         letter = get_object_or_404(Letter, pk=pk)
         letter.delete()
-        return Response"message": "Letter deleted successfully"}, status=status.HTTP_204_NO_CONTENT)
+        return Response({"message": "Letter deleted successfully"}, status=status.HTTP_204_NO_CONTENT)
 
 @api_view(['GET'])
 def attendance_log(request):
