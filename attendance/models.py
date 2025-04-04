@@ -78,7 +78,8 @@ class Parcel(models.Model):
                      
       ]
     time=models.TimeField
+    
     def __str__(self):
-        return f" ({self.purpose})"
+        return f" ({self.sender_name})"
     
      
