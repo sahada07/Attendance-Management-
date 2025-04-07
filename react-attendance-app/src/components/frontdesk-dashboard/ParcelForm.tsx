@@ -69,6 +69,7 @@ const ParcelForm: React.FC<ParcelFormProps> = ({ isOpen, onClose, onSubmit, init
           <div className="form-group">
             <label htmlFor="type">Type</label>
             <select
+              name="type"
               id="type"
               value={formData.type}
               onChange={(e) => setFormData({ ...formData, type: e.target.value as Parcel['type'] })}
@@ -85,6 +86,7 @@ const ParcelForm: React.FC<ParcelFormProps> = ({ isOpen, onClose, onSubmit, init
           <div className="form-group">
             <label htmlFor="sendersName">Sender's Name</label>
             <input
+              name="sender_name"
               type="text"
               id="sendersName"
               value={formData.sendersName}
@@ -96,6 +98,7 @@ const ParcelForm: React.FC<ParcelFormProps> = ({ isOpen, onClose, onSubmit, init
           <div className="form-group">
             <label htmlFor="receiversName">Receiver's Name</label>
             <input
+              name="receiver_name"
               type="text"
               id="receiversName"
               value={formData.receiversName}
@@ -107,6 +110,7 @@ const ParcelForm: React.FC<ParcelFormProps> = ({ isOpen, onClose, onSubmit, init
           <div className="form-group">
             <label htmlFor="department">Department</label>
             <select
+              name="department"
               id="department"
               value={formData.department}
               onChange={(e) => setFormData({ ...formData, department: e.target.value })}

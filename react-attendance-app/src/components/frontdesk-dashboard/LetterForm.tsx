@@ -86,6 +86,7 @@ const LetterForm: React.FC<LetterFormProps> = ({ isOpen, onClose, onSubmit, init
           <div className="form-group">
             <label htmlFor="sendersName">Sender's Name</label>
             <input
+              name="sender_name"
               type="text"
               id="sendersName"
               value={formData.sendersName}
@@ -95,10 +96,11 @@ const LetterForm: React.FC<LetterFormProps> = ({ isOpen, onClose, onSubmit, init
           </div>
 
           <div className="form-group">
-            <label htmlFor="receiversName">Receiver's Name</label>
+            <label htmlFor="receiver_name">Receiver's Name</label>
             <input
+              name="receiver_name"
               type="text"
-              id="receiversName"
+              id="receiver_name"
               value={formData.receiversName}
               onChange={(e) => setFormData({ ...formData, receiversName: e.target.value })}
               required
@@ -108,6 +110,7 @@ const LetterForm: React.FC<LetterFormProps> = ({ isOpen, onClose, onSubmit, init
           <div className="form-group">
             <label htmlFor="department">Department</label>
             <select
+              name="department"
               id="department"
               value={formData.department}
               onChange={(e) => setFormData({ ...formData, department: e.target.value })}
@@ -128,7 +131,8 @@ const LetterForm: React.FC<LetterFormProps> = ({ isOpen, onClose, onSubmit, init
           <div className="form-group">
             <label htmlFor="date">Date</label>
             <input
-              type="date"
+              name="date"
+              // type="date"
               id="date"
               value={formData.date}
               onChange={(e) => setFormData({ ...formData, date: e.target.value })}
