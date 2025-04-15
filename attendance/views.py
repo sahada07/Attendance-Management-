@@ -2,8 +2,8 @@
 
 from urllib import request
 from rest_framework import generics
-from .models import AttendanceLog,Letter
-from .serializers import AttendanceLogSerializer,LetterSerializer
+from .models import AttendanceLog,Letter,Parcel
+from .serializers import AttendanceLogSerializer,LetterSerializer, ParcelSerializer
 from rest_framework import viewsets
 from rest_framework.response import Response
 from rest_framework import status
@@ -105,6 +105,42 @@ def delete_attendance(request,pk):
  remove_attendance = get_object_or_404(AttendanceLog, pk=pk)  
  remove_attendance.delete()
  return Response({'message':'Attendance  record deleted successfully'} , status=status.HTTP_204_NO_CONTENT)
+
+
+@api_view(['GET'])
+def parcels(request):
+    gift = Parcel.objects.all()
+    print (gift)
+    serialaized_parcel =ParcelSerializer(gift, many=True)
+    print (serialaized_parcel)
+
+    return Response(status=status.HTTP_200_OK, data=serialaized_parcel.data)
+
+@api_view(['POST'])
+def add_parcel(request):
+  serializer = ParcelSerializer(data=request.data)
+  if serializer.is_valid():
+        serializer.save()
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
+  else:
+   return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+@api_view(['PUT'])
+def edit_parcel(request,pk):
+ put_parcel = get_object_or_404(Parcel, pk=pk)  
+ put_parcel = ParcelSerializer(data= request.data)
+ if put_parcel.is_valid():
+    put_parcel.save()
+    return Response (put_parcel.data, status=status.HTTP_201_CREATED) 
+ else:
+     return Response(put_parcel.data, status=status.HTTP_400_BAD_REQUEST)
+    
+@api_view (['DELETE'])
+def delete_parcel(request,pk):
+ remove_parcel = get_object_or_404(Parcel, pk=pk)  
+ remove_parcel.delete()
+ return Response({'message':'Parcel deleted successfully'} , status=status.HTTP_204_NO_CONTENT)
+
 
 class AttendanceLogViewSet(viewsets.ModelViewSet):
     serializer_class = AttendanceLogSerializer
