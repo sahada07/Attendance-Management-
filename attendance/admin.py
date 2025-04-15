@@ -8,3 +8,4 @@ admin.site.register(Letter)
 admin.site.register(Parcel)
 
 # Register your models here.
+
