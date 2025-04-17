@@ -149,6 +149,7 @@ const TakeAttendance: React.FC = () => {
               <input
                 type="text"
                 id="fullName"
+                name="full_name"
                 value={formData.fullName}
                 onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                 required
@@ -161,6 +162,7 @@ const TakeAttendance: React.FC = () => {
                 <input
                   type="email"
                   id="email"
+                  name="email"
                   value={formData.email}
                   onChange={handleEmailChange}
                   onBlur={() => setTimeout(() => setShowSuggestions(false), 200)}
@@ -186,6 +188,7 @@ const TakeAttendance: React.FC = () => {
               <label htmlFor="purpose">Purpose</label>
               <select
                 id="purpose"
+                name="purpose"
                 value={formData.purpose}
                 onChange={(e) => setFormData({ ...formData, purpose: e.target.value as ClockInData['purpose'] })}
                 required
@@ -215,6 +218,7 @@ const TakeAttendance: React.FC = () => {
               <input
                 type="tel"
                 id="phoneNumber"
+                name="phone_number"
                 value={formData.phoneNumber}
                 onChange={(e) => setFormData({ ...formData, phoneNumber: e.target.value })}
                 required
